@@ -6,7 +6,7 @@ import { CreateCategoryService } from "../modules/cars/services/CreateCategorySe
 const categoriesRoutes = Router();
 const categoriesRepository = new CategoriesRepository();
 
-categoriesRoutes.post("/categories", (req, res) => {
+categoriesRoutes.post("/", (req, res) => {
   const { name, description } = req.body;
 
   const createCategoryService = new CreateCategoryService(categoriesRepository);
@@ -16,7 +16,7 @@ categoriesRoutes.post("/categories", (req, res) => {
   return res.status(201).send();
 });
 
-categoriesRoutes.get("/categories", (req, res) => {
+categoriesRoutes.get("/", (req, res) => {
   const allCategories = categoriesRepository.list();
 
   return res.json(allCategories);
