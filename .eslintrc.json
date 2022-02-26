@@ -77,6 +77,7 @@
         ]
       }
     ],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.spec.ts"]}],
     "prettier/prettier": "error"
   },
   "settings": {
